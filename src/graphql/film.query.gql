@@ -1,0 +1,6 @@
+query filmsIndexPage {
+  films {
+    id
+    title
+  }
+}

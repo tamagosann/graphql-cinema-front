@@ -1,10 +1,10 @@
 import { FC } from "react";
 import Image from "next/image";
 
-export const FilmCard: FC = () => {
+export const FilmCard: FC = ({}) => {
   return (
     <>
-      <div className="card w-96 bg-base-100 image-full">
+      <div className="card w-96 shadow-xl image-full">
         <figure>
           <Image
             src="https://api.lorem.space/image/shoes?w=400&h=225"
