@@ -1,25 +1,19 @@
 import { FC } from "react";
 import Image from "next/image";
 
-export const FilmCard: FC = ({}) => {
+// FIXME: 仮props ちゃんとした型に置き換える
+type Props = { src: string | undefined; alt: string | undefined };
+
+export const FilmCard = ({ src, alt }: Props) => {
   return (
-    <>
-      <div className="card w-96 shadow-xl image-full">
-        <figure>
-          <Image
-            src="https://api.lorem.space/image/shoes?w=400&h=225"
-            alt="Shoes"
-            layout="fill"
-          />
-        </figure>
-        <div className="card-body">
-          <h2 className="card-title">Shoes!</h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <button className="btn btn-primary">Buy Now</button>
-          </div>
-        </div>
-      </div>
-    </>
+    <div className="card w-48 h-28">
+      <figure>
+        {!!src ? (
+          <Image src={src ?? ""} alt={alt} layout="fill" />
+        ) : (
+          <div className="w-48 h-28 bg-gray-200 animate-pulse"></div>
+        )}
+      </figure>
+    </div>
   );
 };

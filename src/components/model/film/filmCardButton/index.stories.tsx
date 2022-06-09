@@ -1,20 +1,20 @@
 import React from "react";
 import { ComponentStory, ComponentMeta } from "@storybook/react";
-import { FilmCard } from ".";
+import { FilmCardButton } from "@/components/model/film/filmCardButton/index";
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-  title: "Film/FilmCard",
-  component: FilmCard,
+  title: "Film/FilmCardButton",
+  component: FilmCardButton,
   // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
   argTypes: {
     backgroundColor: { control: "color" },
   },
-} as ComponentMeta<typeof FilmCard>;
+} as ComponentMeta<typeof FilmCardButton>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof FilmCard> = (args) => (
-  <FilmCard {...args} />
+const Template: ComponentStory<typeof FilmCardButton> = (args) => (
+  <FilmCardButton {...args} />
 );
 
 export const WithProps = Template.bind({});
@@ -22,6 +22,7 @@ export const WithProps = Template.bind({});
 WithProps.args = {
   src: "https://api.lorem.space/image/shoes?w=400&h=225",
   alt: "shoes",
+  handleClickFilmCard: () => console.log("clicked"),
 };
 
 export const NoProps = Template.bind({});
@@ -29,4 +30,5 @@ export const NoProps = Template.bind({});
 NoProps.args = {
   src: undefined,
   alt: undefined,
+  handleClickFilmCard: () => console.log("clicked"),
 };
