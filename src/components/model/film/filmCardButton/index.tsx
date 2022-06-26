@@ -3,9 +3,9 @@ import { MouseEvent } from "react";
 
 // FIXME: 仮props ちゃんとした型に置き換える
 type Props = {
-  src: string | undefined;
-  alt: string | undefined;
-  handleClickFilmCard: (
+  src?: string | undefined;
+  alt?: string | undefined;
+  handleClickFilmCard?: (
     e: MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
   ) => void;
 };
