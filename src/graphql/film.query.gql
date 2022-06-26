@@ -2,5 +2,11 @@ query filmsIndexPage {
   films {
     id
     title
+    release_date
+    backdrop_path
+    genre_ids
+    poster_path
+    overview
+    original_title
   }
 }

@@ -17,20 +17,27 @@ export type Scalars = {
 
 export type FilmModel = {
   __typename?: 'FilmModel';
-  id: Scalars['String'];
+  backdrop_path: Scalars['String'];
+  genre_ids: Array<Maybe<Scalars['Float']>>;
+  id: Scalars['Float'];
+  original_title: Scalars['String'];
+  overview: Scalars['String'];
+  poster_path: Scalars['String'];
+  release_date: Scalars['String'];
   title: Scalars['String'];
 };
 
 export type Query = {
   __typename?: 'Query';
   films?: Maybe<Array<FilmModel>>;
+  filmsIndexPage?: Maybe<Array<FilmModel>>;
   prismaFilms?: Maybe<Array<FilmModel>>;
 };
 
 export type FilmsIndexPageQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type FilmsIndexPageQuery = { __typename?: 'Query', films?: Array<{ __typename?: 'FilmModel', id: string, title: string }> | null };
+export type FilmsIndexPageQuery = { __typename?: 'Query', films?: Array<{ __typename?: 'FilmModel', id: number, title: string, release_date: string, backdrop_path: string, genre_ids: Array<number | null>, poster_path: string, overview: string, original_title: string }> | null };
 
 
 export const FilmsIndexPageDocument = gql`
@@ -38,6 +45,12 @@ export const FilmsIndexPageDocument = gql`
   films {
     id
     title
+    release_date
+    backdrop_path
+    genre_ids
+    poster_path
+    overview
+    original_title
   }
 }
     `;

@@ -17,7 +17,7 @@ export const FilmCardButton = ({
   const { alt } = rest;
   return (
     <button
-      className="block"
+      className="block "
       aria-label={`${alt}の詳細を開く`}
       onClick={handleClickFilmCard}
     >

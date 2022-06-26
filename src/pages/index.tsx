@@ -1,11 +1,12 @@
-import Layout from "components/layouts/layout";
-import { IndexTemplate } from "components/templates/index";
-import { pageMeta } from "constants/pageMeta";
+import Layout from "@/components/layouts/layout";
+import { IndexTemplate } from "@/components/templates/index";
+import { pageMeta } from "@/constants/pageMeta";
 import {
+  FilmModel,
   FilmsIndexPageDocument,
   FilmsIndexPageQuery,
-} from "graphql/generated.graphql";
-import { urqlClient } from "libs/grql-request";
+} from "@/graphql/generated.graphql";
+import { urqlClient } from "@/libs/grql-request";
 import type {
   GetServerSideProps,
   InferGetServerSidePropsType,
@@ -23,7 +24,8 @@ type Props = InferGetServerSidePropsType<
 const Home: NextPage<Props> = ({ films }) => {
   return (
     <Layout {...indexPageMeta}>
-      <IndexTemplate />
+      {/* FIXME: filmsのnullの消し方がわからないため一旦asで無理矢理型を上書きする */}
+      <IndexTemplate films={films as FilmModel[] | undefined} />
     </Layout>
   );
 };
