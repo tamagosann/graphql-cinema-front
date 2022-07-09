@@ -16,7 +16,7 @@ export const HorizontalFilmCardList = ({
     <>
       {/* TODO:とりあえずh2で置くが、後でセマンティック部分は整理する */}
       <h2 className="mb-3 font-bold">ジャンル</h2>
-      <ul className="flex space-x-4 overflow-scroll" role="list">
+      <ul className="flex space-x-4 overflow-scroll mb-3" role="list">
         {!films || !films.length
           ? [...Array(10)].map((_, index: number) => {
               return (
